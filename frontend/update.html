@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=f, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="editrecord/{{post.id}}" method="POST">
+        {% csrf_token %}
+        
+        <input type="text" name="name" value="{{post.item_name}}">
+        <input type="text" name="about" value="{{post.category}}">
+        <input type="text" name="logo" value="{{post.price}}">
+        <input type="text" name="logo" value="{{post.price}}">
+        <input type="text" name="logo" value="{{post.expiration_date}}">
+        <input type="text" name="logo" value="{{post.paymet}}">
+        <button type="save">Save</button>
+    </form>
+</body>
+</html>
