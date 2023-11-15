@@ -2,14 +2,16 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
 from .forms import *
+from django.db.models import Q
 # Create your views here.
 def items(request):
-    category = Category.objects.all()
-    item = Item.objects.all()
-    context = {
-        'category':category,
-        'item':item
-    }
+    if 'q' in request.GET:
+        qidirish = request.GET['q']
+        umumiy = Q(item_name__icontains=qidirish.lower())
+        post = Item.objects.filter(umumiy)
+    else:
+        post = Item.objects.all()    
+    context = {'post':post}
     return render(request, 'index.html', context)
 
 def add(request):

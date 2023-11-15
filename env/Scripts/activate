@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\TRiO\Desktop\market.table\market_website\env"
+VIRTUAL_ENV="C:\Users\Inkubatsiya\Desktop\market_website\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
